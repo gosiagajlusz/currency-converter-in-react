@@ -1,9 +1,10 @@
 
 import './App.css';
+import Container from "./Container";
 
 function App() {
   return (
-    <main className="container">
+    <Container>
 
         <form className="form js-form" action="https://postman-echo.com/get">
 
@@ -30,7 +31,7 @@ function App() {
                 </p>
             </fieldset>
         </form>
-    </main>
+    </Container>
 
   );
 }
