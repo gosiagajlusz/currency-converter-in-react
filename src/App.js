@@ -12,12 +12,28 @@ function App() {
     event.preventDefault();
     console.log(`${amount}`);
     console.log(`${currency}`);
+    console.log(`${calculateResult}`);
   };
 
-  
-
   const [currency, setCurrency] = useState("EUR");
-  const onSelectChange = ({target})=>setCurrency(target.value);
+  const onSelectChange = ({ target }) => setCurrency(target.value);
+
+  const calculateResult = (rate, amount) => {
+    const eurRate = 4.48;
+    const usdRate = 4.08;
+    const chfRate = 4.57;
+
+    switch (rate) {
+      case "EUR":
+        return {amount} * eurRate;
+
+      case "USD":
+        return {amount} * usdRate;
+
+      case "CHF":
+        return {amount} * chfRate;
+    }
+  };
 
   return (
     <Container>
@@ -32,6 +48,7 @@ function App() {
         onSelectChange={onSelectChange}
       ></Form>
       <Result></Result>
+      <p> </p>
     </Container>
   );
 }

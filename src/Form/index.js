@@ -30,6 +30,8 @@ const Form = ({ onFormSubmit, amount, setAmount, currency, setCurrency,onSelectC
             <button type="submit" className="form__button">
               Przelicz!
             </button>
+
+            {/* <textarea {money}/> */}
           </label>
         </div>
 
@@ -38,7 +40,7 @@ const Form = ({ onFormSubmit, amount, setAmount, currency, setCurrency,onSelectC
         {/* </div> */}
 
         {/* <p>Kwota w złotówkach:</>
-        <textarea /> */}
+         */}
       </fieldset>
     </form>
   );
