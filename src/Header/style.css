@@ -1,0 +1,8 @@
+.header{
+    display: inline-block;
+    margin: 5px;
+    color: #113850;
+    font-weight: bold;
+    width: 100%;
+    max-width: 300px;
+}

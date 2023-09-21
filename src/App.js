@@ -5,12 +5,14 @@ import Container from "./Container";
 function App() {
   return (
     <Container>
+        <Header></Header>
+
+
 
         <form className="form js-form" action="https://postman-echo.com/get">
 
-
             <fieldset className="form__fieldset">
-                <legend className="form__legend">Sprawdź ile to złotówek</legend>
+                
                 <label>
                     <span className="form__labelText"> Kwota </span>
                     <input name="money" className="form__money js-form__money" type="number" step="0.01" min="1" required />
