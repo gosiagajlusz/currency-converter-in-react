@@ -1,34 +1,39 @@
 import "./style.css";
 
-const Form = () => {
+const Form = ({ onFormSubmit, amount, setAmount }) => {
   return (
-    <form className="form" action="https://postman-echo.com/get">
+    <form className="form" onSubmit={onFormSubmit}>
       <fieldset className="form__fieldset">
         <div className="form__section">
-          <span className="form__labelText"> Kwota </span>
-          <div className="form__inputSelect">
+          <label>
+            <p className="form__labelText">Kwota </p>
+            {/* <div className="form__inputSelect"> */}
             <input
               className="form__money"
-              name="money"
-              type="number"
-              step="0.01"
-              min="1"
-              required
+              value={amount} 
+              onChange={({target})=>setAmount(target.value)}
+              //   name="money"
+              //   type="number"
+              //   step="0.01"
+              //   min="1"
+              //   required
             />
             <select className="form__currencyType" name="currency">
               <option value="EUR">EUR</option>
               <option value="USD">USD</option>
               <option value="CHF">CHF</option>
             </select>
-          </div>
-        </div>
-       
+            {/* </div> */}
 
-        <div className="form__sectionForButton">
-          <button type="submit" className="form__button">
-            Przelicz!
-          </button>
+            <button type="submit" className="form__button">
+              Przelicz!
+            </button>
+          </label>
         </div>
+
+        {/* <div className="form__sectionForButton"> */}
+
+        {/* </div> */}
       </fieldset>
     </form>
   );
