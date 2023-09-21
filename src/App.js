@@ -18,22 +18,14 @@ function App() {
   const [currency, setCurrency] = useState("EUR");
   const onSelectChange = ({ target }) => setCurrency(target.value);
 
-  const calculateResult = (rate, amount) => {
-    const eurRate = 4.48;
-    const usdRate = 4.08;
-    const chfRate = 4.57;
-
-    switch ({currency}) {
-      case "EUR":
-        return {amount} * eurRate;
-
-      case "USD":
-        return {amount} * usdRate;
-
-      case "CHF":
-        return {amount} * chfRate;
-    }
-  };
+//   const calculateResult = ({ currency }, { amount }) => {}
+    
+    const currencies = [
+      { content: "EUR", rate: 4.48 },
+      { content: "USD", rate: 4.08 },
+      { content: "CHF", rate: 4.57 },
+    ];
+  
 
   return (
     <Container>
