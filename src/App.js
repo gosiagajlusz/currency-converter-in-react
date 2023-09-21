@@ -11,13 +11,13 @@ function App() {
   const onFormSubmit = (event) => {
     event.preventDefault();
     console.log(`${amount}`);
+    console.log(`${currency}`);
   };
 
-  const [name, setName] = useState("");
-  const onTestFormSubmit = (event) => {
-    event.preventDefault();
-    console.log(`wysłano ${name}`);
-  };
+  
+
+  const [currency, setCurrency] = useState("EUR");
+  const onSelectChange = ({target})=>setCurrency(target.value);
 
   return (
     <Container>
@@ -27,6 +27,9 @@ function App() {
         onFormSubmit={onFormSubmit}
         amount={amount}
         setAmount={setAmount}
+        currency={currency}
+        setCurrency={setCurrency}
+        onSelectChange={onSelectChange}
       ></Form>
       <Result></Result>
     </Container>
