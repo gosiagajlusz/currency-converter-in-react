@@ -1,6 +1,13 @@
 import "./style.css";
 
-const Form = ({ onFormSubmit, amount, setAmount, currency, setCurrency,onSelectChange }) => {
+const Form = ({
+  onFormSubmit,
+  amount,
+  setAmount,
+  currency,
+  setCurrency,
+  onSelectChange,
+}) => {
   return (
     <form className="form" onSubmit={onFormSubmit}>
       <fieldset className="form__fieldset">
@@ -10,17 +17,19 @@ const Form = ({ onFormSubmit, amount, setAmount, currency, setCurrency,onSelectC
             {/* <div className="form__inputSelect"> */}
             <input
               className="form__money"
-              value={amount} 
-              onChange={({target})=>setAmount(target.value)}
+              value={amount}
+              onChange={({ target }) => setAmount(target.value)}
               //   name="money"
               //   type="number"
               //   step="0.01"
               //   min="1"
               //   required
             />
-            <select className="form__currencyType"
-             value={currency}
-             onChange={onSelectChange}>
+            <select
+              className="form__currencyType"
+              value={currency}
+              onChange={onSelectChange}
+            >
               <option value="EUR">EUR</option>
               <option value="USD">USD</option>
               <option value="CHF">CHF</option>

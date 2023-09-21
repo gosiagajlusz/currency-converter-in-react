@@ -11,19 +11,17 @@ function App() {
   const onFormSubmit = (event) => {
     event.preventDefault();
     console.log(`${amount}`);
-    console.log(`${currency}`);    
+    console.log(`${currency}`);
   };
 
   const [currency, setCurrency] = useState("EUR");
   const onSelectChange = ({ target }) => setCurrency(target.value);
 
-    
-    const currencies = [
-      { id: "EUR", rate: 4.48 },
-      { id: "USD", rate: 4.08 },
-      { id: "CHF", rate: 4.57 },
-    ];
-  
+  const currencies = [
+    { id: "EUR", rate: 4.48 },
+    { id: "USD", rate: 4.08 },
+    { id: "CHF", rate: 4.57 },
+  ];
 
   return (
     <Container>
