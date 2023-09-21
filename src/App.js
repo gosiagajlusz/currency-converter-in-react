@@ -11,19 +11,17 @@ function App() {
   const onFormSubmit = (event) => {
     event.preventDefault();
     console.log(`${amount}`);
-    console.log(`${currency}`);
-    console.log(`${calculateResult}`);
+    console.log(`${currency}`);    
   };
 
   const [currency, setCurrency] = useState("EUR");
   const onSelectChange = ({ target }) => setCurrency(target.value);
 
-//   const calculateResult = ({ currency }, { amount }) => {}
     
     const currencies = [
-      { content: "EUR", rate: 4.48 },
-      { content: "USD", rate: 4.08 },
-      { content: "CHF", rate: 4.57 },
+      { id: "EUR", rate: 4.48 },
+      { id: "USD", rate: 4.08 },
+      { id: "CHF", rate: 4.57 },
     ];
   
 
