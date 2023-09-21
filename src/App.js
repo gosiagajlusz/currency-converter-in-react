@@ -23,7 +23,7 @@ function App() {
     const usdRate = 4.08;
     const chfRate = 4.57;
 
-    switch (rate) {
+    switch ({currency}) {
       case "EUR":
         return {amount} * eurRate;
 
