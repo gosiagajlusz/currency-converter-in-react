@@ -4,14 +4,11 @@ import Header from "./Header";
 import Form from "./Form";
 import Result from "./Result";
 import { useState } from "react";
+import { currencies } from "./currencies";
 
 function App() {
   const [amount, setAmount] = useState(0);
-  const currencies = [
-    { name: "EUR", rate: 4.48 },
-    { name: "USD", rate: 4.08 },
-    { name: "CHF", rate: 4.57 },
-  ];
+  
 
   const onFormSubmit = (event) => {
     event.preventDefault();
