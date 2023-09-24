@@ -8,13 +8,12 @@ import { currencies } from "./currencies";
 
 function App() {
   const [amount, setAmount] = useState(0);
-  
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    console.log(`${amount}`);
-    console.log(`${currency}`);
-    // calculateResult(currency, amount);
+    // console.log(`${amount}`);
+    // console.log(`${currency}`);
+    calculateResult(currency, amount);
   };
 
   const [currency, setCurrency] = useState(currencies[0].name);
@@ -22,13 +21,15 @@ function App() {
 
   const [result, setResult] = useState(0);
 
-  // const calculateResult = (currency, amount) => {
-  //   let rate = currencies.find(({ name }) => name === currency).rate;
+  const calculateResult = (currency, amount) => {
+    const rate = currencies
+    .find(({ name }) => name === currency).rate;
 
-  //   setResult = amount / rate;
-  //   return result
+    setResult ({
+targetAmount: amount/ rate,
 
-  // };
+    });
+  };
 
   return (
     <Container>
@@ -41,12 +42,14 @@ function App() {
         currency={currency}
         setCurrency={setCurrency}
         onSelectChange={onSelectChange}
+        result={result}
+        calculateResult={calculateResult}
       ></Form>
-      <Result 
-      // calculateResult={calculateResult}
-      >
-        
-      </Result>
+      <Result
+      calculateResult={calculateResult}
+      result={result}
+      amount={amount}
+      ></Result>
       <p> </p>
     </Container>
   );

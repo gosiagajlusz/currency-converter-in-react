@@ -1,4 +1,5 @@
 import "./style.css";
+import { currencies } from "../currencies";
 
 const Form = ({
   onFormSubmit,
@@ -7,6 +8,8 @@ const Form = ({
   currency,
   setCurrency,
   onSelectChange,
+  result,
+  calculateResult,
 }) => {
   return (
     <form className="form" onSubmit={onFormSubmit}>
@@ -19,20 +22,24 @@ const Form = ({
               className="form__money"
               value={amount}
               onChange={({ target }) => setAmount(target.value)}
+              // placeholder="Wpisz kwotę w złotówkach"
+
               //   name="money"
-              //   type="number"
-              //   step="0.01"
+              type="number"
+              step="0.01"
               //   min="1"
-              //   required
+              required
             />
             <select
               className="form__currencyType"
               value={currency}
               onChange={onSelectChange}
             >
-              <option value="EUR">EUR</option>
-              <option value="USD">USD</option>
-              <option value="CHF">CHF</option>
+              {currencies.map((currency) => (
+                <option key={currency.name} value={currency.name}>
+                  {currency.name}
+                </option>
+              ))}
             </select>
             {/* </div> */}
 
