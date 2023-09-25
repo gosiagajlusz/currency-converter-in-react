@@ -26,6 +26,7 @@ function App() {
     .find(({ name }) => name === currency).rate;
 
     setResult ({
+      amount: +amount,
 targetAmount: amount*rate,
 
     });
