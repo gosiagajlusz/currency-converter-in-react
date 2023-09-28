@@ -14,7 +14,7 @@ const Form = ({
 }) => {
   return (
     <form className="form" onSubmit={onFormSubmit}>
-      <fieldset className="form__fieldset">
+      
         <div className="form__section">
           <label>
             <p className="form__labelText">Wpisz kwotę</p>
@@ -66,7 +66,7 @@ const Form = ({
          {result && <p className="form__result">
   Kwota w złotówkach: <strong>{result.targetAmount.toFixed(2)} </strong>
 </p>}
-      </fieldset>
+      
     </form>
   );
 };
