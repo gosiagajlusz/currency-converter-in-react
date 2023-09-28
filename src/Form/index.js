@@ -10,6 +10,7 @@ const Form = ({
   onSelectChange,
   result,
   calculateResult,
+  targetAmount
 }) => {
   return (
     <form className="form" onSubmit={onFormSubmit}>
@@ -25,6 +26,7 @@ const Form = ({
               placeholder="Wpisz kwotę w złotówkach"
               type="number"
               step="0.01"
+              min="0.1"
               required
             />
             </label>
@@ -61,6 +63,9 @@ const Form = ({
 
         {/* <p>Kwota w złotówkach:</>
          */}
+         {result && <p className="form__result">
+  Kwota w złotówkach: <strong>{result.targetAmount.toFixed(2)} </strong>
+</p>}
       </fieldset>
     </form>
   );

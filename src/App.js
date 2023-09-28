@@ -46,12 +46,12 @@ targetAmount: amount*rate,
         result={result}
         calculateResult={calculateResult}
       ></Form>
-      <Result
+      {/* <Result
       calculateResult={calculateResult}
       result={result}
       amount={amount}
-      ></Result>
-      <p> </p>
+      ></Result> */}
+      
     </Container>
   );
 }
