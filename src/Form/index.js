@@ -17,7 +17,7 @@ const Form = ({
       <fieldset className="form__fieldset">
         <div className="form__section">
           <label>
-            <p className="form__labelText">Wpisz kwotę w złotówkach</p>
+            <p className="form__labelText">Wpisz kwotę</p>
 
             <input
               className="form__money"

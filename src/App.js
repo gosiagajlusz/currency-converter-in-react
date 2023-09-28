@@ -2,7 +2,6 @@ import "./App.css";
 import Container from "./Container";
 import Header from "./Header";
 import Form from "./Form";
-import Result from "./Result";
 import { useState } from "react";
 import { currencies } from "./currencies";
 
@@ -46,12 +45,7 @@ targetAmount: amount*rate,
         result={result}
         calculateResult={calculateResult}
       ></Form>
-      {/* <Result
-      calculateResult={calculateResult}
-      result={result}
-      amount={amount}
-      ></Result> */}
-      
+            
     </Container>
   );
 }

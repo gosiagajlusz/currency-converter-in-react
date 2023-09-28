@@ -1,6 +1,7 @@
 .form {
   margin: 0 auto;
   max-width: 700px;
+  background-color: #c4d7c7;
 }
 
 .form__fieldset {
