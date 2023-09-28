@@ -10,63 +10,54 @@ const Form = ({
   onSelectChange,
   result,
   calculateResult,
-  targetAmount
+  targetAmount,
 }) => {
   return (
     <form className="form" onSubmit={onFormSubmit}>
-      
-        <div className="form__section">
-          <label>
-            <p className="form__labelText">Wpisz kwotę</p>
+      <div className="form__section">
+        <label>
+          <p className="form__labelText">Wpisz kwotę</p>
 
-            <input
-              className="form__money"
-              value={amount}
-              onChange={({ target }) => setAmount(target.value)}
-              placeholder="Wpisz kwotę w złotówkach"
-              type="number"
-              step="0.01"
-              min="0.1"
-              required
-            />
-            </label>
-            </div>
-            
-            <div className="section">
-            <p className="form__labelText">Wybierz walutę</p>
-            <label>
-            <select
-              className="form__currencyType"
-              value={currency}
-              onChange={onSelectChange}
-            >
-              {currencies.map((currency) => (
-                <option key={currency.name} value={currency.name}>
-                  {currency.name}
-                </option>
-              ))}
-            </select>
-            </label>
-            </div>
+          <input
+            className="form__money"
+            value={amount}
+            onChange={({ target }) => setAmount(target.value)}
+            placeholder="Wpisz kwotę w złotówkach"
+            type="number"
+            step="0.01"
+            min="0.1"
+            required
+          />
+        </label>
+      </div>
 
-            <button type="submit" className="form__button">
-              Przelicz!
-            </button>
+      <div className="form__section">
+        <label>
+          <p className="form__labelText">Wybierz walutę</p>
+          <select
+            className="form__currencyType"
+            value={currency}
+            onChange={onSelectChange}
+          >
+            {currencies.map((currency) => (
+              <option key={currency.name} value={currency.name}>
+                {currency.name}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div className="form__sectionForButton">
+        <button type="submit" className="form__button">
+          Przelicz!
+        </button>
+      </div>
 
-            {/* <textarea {money}/> */}
-          
-        
-
-        {/* <div className="form__sectionForButton"> */}
-
-        {/* </div> */}
-
-        {/* <p>Kwota w złotówkach:</>
-         */}
-         {result && <p className="form__result">
-  Kwota w złotówkach: <strong>{result.targetAmount.toFixed(2)} </strong>
-</p>}
-      
+      {result && (
+        <p className="form__result">
+          Kwota w złotówkach: <strong>{result.targetAmount.toFixed(2)} </strong>
+        </p>
+      )}
     </form>
   );
 };

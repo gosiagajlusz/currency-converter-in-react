@@ -18,7 +18,7 @@ function App() {
   const [currency, setCurrency] = useState(currencies[0].name);
   const onSelectChange = ({ target }) => setCurrency(target.value);
 
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState("");
 
   const calculateResult = (currency, amount) => {
     const rate = currencies
