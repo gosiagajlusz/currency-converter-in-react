@@ -19,7 +19,7 @@ const Form = ({
           <p className="form__labelText">Wpisz kwotę</p>
 
           <input
-            className="form__money"
+            className="form__input"
             value={amount}
             onChange={({ target }) => setAmount(target.value)}
             placeholder="Wpisz kwotę w złotówkach"
@@ -35,7 +35,7 @@ const Form = ({
         <label className="form__label">
           <p className="form__labelText">Wybierz walutę</p>
           <select
-            className="form__currencyType"
+            className="form__input"
             value={currency}
             onChange={onSelectChange}
           >
@@ -47,10 +47,12 @@ const Form = ({
           </select>
         </label>
       </div>
+      <div className="form__section">
       <div className="form__sectionForButton">
         <button type="submit" className="form__button">
           Przelicz!
         </button>
+      </div>
       </div>
 
       {result && (
