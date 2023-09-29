@@ -15,7 +15,7 @@ const Form = ({
   return (
     <form className="form" onSubmit={onFormSubmit}>
       <div className="form__section">
-        <label>
+        <label className="form__label">
           <p className="form__labelText">Wpisz kwotę</p>
 
           <input
@@ -32,7 +32,7 @@ const Form = ({
       </div>
 
       <div className="form__section">
-        <label>
+        <label className="form__label">
           <p className="form__labelText">Wybierz walutę</p>
           <select
             className="form__currencyType"

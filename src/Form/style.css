@@ -1,6 +1,6 @@
 .form {
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 500px;
   background-color: #c4d7c7;
   border-radius: 8px;
   padding: 20px;
@@ -28,7 +28,9 @@
 }
 
 .form__label {
-  background-color: aqua;
+  display:grid;
+  grid-template-columns: 1fr auto;
+  justify-content: center;
 }
 
 .form__labelText {
@@ -97,4 +99,8 @@
   .form__section {
     grid-template-columns: 1fr;
   }
+  .form__label{
+    grid-template-columns: 1fr;
+  }
+  
 }
