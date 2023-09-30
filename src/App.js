@@ -1,4 +1,3 @@
-import "./App.css";
 import Container from "./Container";
 import Header from "./Header";
 import Form from "./Form";
@@ -11,8 +10,6 @@ function App() {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    // console.log(`${amount}`);
-    // console.log(`${currency}`);
     calculateResult(currency, amount);
   };
 
@@ -22,21 +19,18 @@ function App() {
   const [result, setResult] = useState("");
 
   const calculateResult = (currency, amount) => {
-    const rate = currencies
-    .find(({ name }) => name === currency).rate;
+    const rate = currencies.find(({ name }) => name === currency).rate;
 
-    setResult ({
+    setResult({
       amount: +amount,
-targetAmount: amount*rate,
-
+      targetAmount: amount * rate,
     });
   };
 
   return (
     <Container>
-      <Clock/>
+      <Clock />
       <Header></Header>
-
 
       <Form
         onFormSubmit={onFormSubmit}
@@ -48,7 +42,6 @@ targetAmount: amount*rate,
         result={result}
         calculateResult={calculateResult}
       />
-            
     </Container>
   );
 }
