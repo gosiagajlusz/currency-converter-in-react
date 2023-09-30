@@ -17,9 +17,9 @@ const myDate = new Date();
 
 // changeTime();
 
- setInterval(()=> {
-    changeTime(); },
-10000);
+//  setInterval(()=> {
+//     changeTime(); },
+// 10000);
 
 
   return <p className="clock" >{myDate.toLocaleString()}</p>;
