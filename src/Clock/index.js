@@ -9,8 +9,10 @@ import "./style.css";
 
 const Clock = ()=>{
     const myDate = new Date();
+    const myClock = myDate.toLocaleString();
     const clockSpace = document.querySelector(".clock");
-clockSpace.innerText = myDate.toString()
+
+clockSpace.innerText = myClock;
    
 
     return (<p className="clock">
