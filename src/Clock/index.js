@@ -1,24 +1,28 @@
 // const Clock = ()=> {
-//     
-//     return 
+//
+//     return
 //      <p className="clock">cokolwiek
 //         {myDate}</p>
 // };
 import "./style.css";
 
+const Clock = () => {
 
-const Clock = ()=>{
-    const myDate = new Date();
-    const myClock = myDate.toLocaleString();
-    const clockSpace = document.querySelector(".clock");
+const myDate = new Date();
 
-clockSpace.innerText = myClock;
-   
+// const changeTime = ()=>{
+//    const myTime = myDate.toLocaleString();
+//    console.log(myTime);
+//  }
 
-    return (<p className="clock">
-        </p>
-        )
-}
+// changeTime();
 
+ setInterval(()=> {
+    changeTime(); },
+10000);
+
+
+  return <p className="clock" >{myDate.toLocaleString()}</p>;
+};
 
 export default Clock;
