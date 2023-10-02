@@ -54,11 +54,11 @@ const Form = ({
           </button>
         </div>
       </div>
-      {result && (
+      {/* {result && (
         <p className="form__result">
           Kwota w złotówkach: <strong>{result.targetAmount.toFixed(2)} </strong>
         </p>
-      )}
+      )} */}
     </form>
   );
 };

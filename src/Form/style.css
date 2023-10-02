@@ -64,11 +64,6 @@
   color: hsl(205, 28%, 80%);
 }
 
-.form__result {
-  margin: 5px 5px;
-  text-align: center;
-  
-}
 
 @media (max-width: 767px) {
   .form__section {
