@@ -8,9 +8,9 @@ const Form = ({
   currency,
   setCurrency,
   onSelectChange,
+  targetAmount,
   result,
   calculateResult,
-  targetAmount,
 }) => {
   return (
     <form className="form" onSubmit={onFormSubmit}>
@@ -48,13 +48,12 @@ const Form = ({
         </label>
       </div>
       <div className="form__section">
-      <div className="form__sectionForButton">
-        <button type="submit" className="form__button">
-          Przelicz!
-        </button>
+        <div className="form__sectionForButton">
+          <button type="submit" className="form__button">
+            Przelicz!
+          </button>
+        </div>
       </div>
-      </div>
-
       {result && (
         <p className="form__result">
           Kwota w złotówkach: <strong>{result.targetAmount.toFixed(2)} </strong>

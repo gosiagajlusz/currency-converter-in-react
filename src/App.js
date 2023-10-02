@@ -4,6 +4,7 @@ import Form from "./Form";
 import { useState } from "react";
 import { currencies } from "./currencies";
 import Clock from "./Clock";
+import Result from "./Result";
 
 function App() {
   const [amount, setAmount] = useState(0);
@@ -30,7 +31,7 @@ function App() {
   return (
     <Container>
       <Clock />
-      <Header/>
+      <Header />
       <Form
         onFormSubmit={onFormSubmit}
         amount={amount}
@@ -40,6 +41,12 @@ function App() {
         onSelectChange={onSelectChange}
         result={result}
         calculateResult={calculateResult}
+      />
+      <Result
+        result={result}
+        calculateResult={calculateResult}
+        amount={amount}
+        setAmount={setAmount}
       />
     </Container>
   );
