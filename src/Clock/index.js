@@ -3,6 +3,15 @@ import { useState, useEffect } from "react";
 
 const Clock = () => {
   const [date, setDate] = useState(new Date());
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -12,20 +21,11 @@ const Clock = () => {
     return () => {
       clearInterval(intervalId);
     };
-  }, [date]);
+  }, []);
 
   return (
     <div className="clock">
-      Dzisiaj jest
-            {" "}
-            {date.toLocaleString(undefined, {
-                weekday: "long",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit",
-                day: "numeric",
-                month: "long"
-            })}
+      Dzisiaj jest {date.toLocaleString(undefined, options)}
     </div>
   );
 };
