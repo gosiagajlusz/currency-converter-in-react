@@ -16,7 +16,7 @@ function App() {
   const [currency, setCurrency] = useState(currencies[0].name);
   const onSelectChange = ({ target }) => setCurrency(target.value);
 
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState(null);
 
   const calculateResult = (currency, amount) => {
     const rate = currencies.find(({ name }) => name === currency).rate;
@@ -30,7 +30,7 @@ function App() {
   return (
     <Container>
       <Clock />
-      <Header></Header>
+      <Header/>
 
       <Form
         onFormSubmit={onFormSubmit}
