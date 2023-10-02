@@ -1,30 +1,27 @@
-// const Clock = ()=> {
-//
-//     return
-//      <p className="clock">cokolwiek
-//         {myDate}</p>
-// };
 import "./style.css";
 import { useState, useEffect } from "react";
 
 const Clock = () => {
-  const myDate = new Date();
+  const clockSpace = document.querySelector(".clock");
 
-  //    tutaj jest szkic funkcji, która będzie aktualizowała godzinę
-  // const changeTime = ()=>{
-  //     const myDate = new Date();
-  // to trzeba przerobić, żeby było funkcją a nie przypisaniem Date do zmiennej,
-  // tylko nie wiem jak
-  //     setTimeout (changeTime,1000);
-  // }
-  // changeTime();  
+  const [date,setDate]= useState(new Date());
 
-  useEffect(() => {
-    const clockSpace = document.querySelector(".clock");
-    clockSpace.innerText = `Dzisiaj jest: ${myDate.toLocaleString()}`;
-  });
+  clockSpace.innerText = `Dzisiaj jest: ${date.toLocaleString()}`;
 
-  return <p className="clock"></p>;
+  useEffect(() =>{
+    const intervalId = setInterval(()=>{
+      setDate(new Date());
+    },1000);
+
+    return ()=> {
+      clearInterval(intervalId);
+    };
+  }, [date]
+   );
+    
+
+  return <p className="clock">
+    </p>;
 };
 
 export default Clock;
