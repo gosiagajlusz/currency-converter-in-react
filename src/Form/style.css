@@ -1,14 +1,8 @@
 .form {
-  margin: 0 auto;
-  max-width: 500px;
-  background-color: #c4d7c7;
-  border-radius: 8px;
-  padding: 20px;
-  color: #080808;
+  margin: 0 auto;  
   display: grid;
   grid-gap: 10px;
   align-items: center;
-  box-shadow: 2px 2px rgb(161, 160, 160);
 }
 
 .form__section {

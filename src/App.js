@@ -31,7 +31,6 @@ function App() {
     <Container>
       <Clock />
       <Header/>
-
       <Form
         onFormSubmit={onFormSubmit}
         amount={amount}
