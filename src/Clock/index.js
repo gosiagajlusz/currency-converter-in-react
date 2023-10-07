@@ -1,16 +1,9 @@
 import "./style.css";
 import { useState, useEffect } from "react";
 import { useCurrentDate } from "./useCurrentDate";
+import { options } from "./options";
 
-const options = {
-  weekday: "long",
-  year: "numeric",
-  month: "numeric",
-  day: "numeric",
-  hour: "2-digit",
-  minute: "2-digit",
-  second: "2-digit",
-};
+
 const Clock = () => {
   const date = useCurrentDate();
   return (
