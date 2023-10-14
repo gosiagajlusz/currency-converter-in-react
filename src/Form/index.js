@@ -1,5 +1,15 @@
 import "./style.css";
 import { currencies } from "../currencies";
+import {
+  FormWrapper,
+  Section,
+  ButtonWrapper,
+  Label,
+  Paragraph,
+  Button,
+  Input,
+  Select
+} from "./styled";
 
 const Form = ({
   onFormSubmit,
@@ -13,13 +23,12 @@ const Form = ({
   calculateResult,
 }) => {
   return (
-    <form className="form" onSubmit={onFormSubmit}>
-      <div className="form__section">
-        <label className="form__label">
-          <p className="form__labelText">Wpisz kwotę</p>
+    <FormWrapper onSubmit={onFormSubmit}>
+      <Section>
+        <Label>
+          <Paragraph>Wpisz kwotę</Paragraph>
 
-          <input
-            className="form__input"
+          <Input
             value={amount}
             onChange={({ target }) => setAmount(target.value)}
             placeholder="Wpisz kwotę w złotówkach"
@@ -28,14 +37,13 @@ const Form = ({
             min="0.1"
             required
           />
-        </label>
-      </div>
+        </Label>
+      </Section>
 
-      <div className="form__section">
-        <label className="form__label">
-          <p className="form__labelText">Wybierz walutę</p>
-          <select
-            className="form__input"
+      <Section>
+        <Label>
+          <Paragraph>Wybierz walutę</Paragraph>
+          <Select
             value={currency}
             onChange={onSelectChange}
           >
@@ -44,22 +52,15 @@ const Form = ({
                 {currency.name}
               </option>
             ))}
-          </select>
-        </label>
-      </div>
-      <div className="form__section">
-        <div className="form__sectionForButton">
-          <button type="submit" className="form__button">
-            Przelicz!
-          </button>
-        </div>
-      </div>
-      {/* {result && (
-        <p className="form__result">
-          Kwota w złotówkach: <strong>{result.targetAmount.toFixed(2)} </strong>
-        </p>
-      )} */}
-    </form>
+          </Select>
+        </Label>
+      </Section>
+      <Section>
+        <ButtonWrapper>
+          <Button type="submit">Przelicz!</Button>
+        </ButtonWrapper>
+      </Section>
+    </FormWrapper>
   );
 };
 

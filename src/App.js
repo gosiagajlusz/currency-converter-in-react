@@ -5,6 +5,10 @@ import { useState } from "react";
 import { currencies } from "./currencies";
 import Clock from "./Clock";
 import Result from "./Result";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
+import { GlobalStyle } from "./globalStyles";
+
 
 function App() {
   const [amount, setAmount] = useState(0);
@@ -29,26 +33,29 @@ function App() {
   };
 
   return (
-    <Container>
-      <Clock />
-      <Header />
-      <Form
-        onFormSubmit={onFormSubmit}
-        amount={amount}
-        setAmount={setAmount}
-        currency={currency}
-        setCurrency={setCurrency}
-        onSelectChange={onSelectChange}
-        result={result}
-        calculateResult={calculateResult}
-      />
-      <Result
-        result={result}
-        calculateResult={calculateResult}
-        amount={amount}
-        setAmount={setAmount}
-      />
-    </Container>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Container>
+        <Clock />
+        <Header />
+        <Form
+          onFormSubmit={onFormSubmit}
+          amount={amount}
+          setAmount={setAmount}
+          currency={currency}
+          setCurrency={setCurrency}
+          onSelectChange={onSelectChange}
+          result={result}
+          calculateResult={calculateResult}
+        />
+        <Result
+          result={result}
+          calculateResult={calculateResult}
+          amount={amount}
+          setAmount={setAmount}
+        />
+      </Container>
+    </ThemeProvider>
   );
 }
 
