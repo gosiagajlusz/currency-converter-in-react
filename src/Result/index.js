@@ -1,13 +1,14 @@
-import "./style.css";
+import { ResultWrapper, Paragraph } from "./styled";
+
 const Result = ({ result, calculateResult, targetAmount }) => {
   return (
-    <div className="result">
+    <ResultWrapper>
       {result && (
-        <p className="result__paragraph">
+        <Paragraph>
           Kwota w złotówkach: <strong>{result.targetAmount.toFixed(2)} </strong>
-        </p>
+        </Paragraph>
       )}
-    </div>
+    </ResultWrapper>
   );
 };
 export default Result;

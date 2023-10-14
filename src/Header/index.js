@@ -1,9 +1,9 @@
-import "./style.css";
+import { HeaderStyling } from "./styled";
 
 const Header = () => (
-  <header className="header">
+  <HeaderStyling>
     <p>Sprawdź ile to złotówek</p>
-  </header>
+  </HeaderStyling>
 );
 
 export default Header;
