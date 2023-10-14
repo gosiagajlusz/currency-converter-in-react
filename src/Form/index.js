@@ -1,4 +1,3 @@
-import "./style.css";
 import { currencies } from "../currencies";
 import {
   FormWrapper,
