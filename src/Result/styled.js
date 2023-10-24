@@ -9,3 +9,10 @@ export const Paragraph = styled.p`
   text-align: center;
   margin: 0px;
 `;
+
+export const Loading = styled.p `
+color:teal;
+`
+export const Failure = styled.p `
+color:red;
+`
