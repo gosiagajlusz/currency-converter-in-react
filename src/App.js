@@ -1,4 +1,3 @@
-// import Container from "./Container";
 import Header from "./Header";
 import Form from "./Form";
 import { useState } from "react";
@@ -10,17 +9,15 @@ import { theme } from "./theme";
 import { GlobalStyle } from "./globalStyles";
 import styled from "styled-components";
 
-
 const Container = styled.main`
   margin: 30px auto;
-  background-color: #c4d7c7;
+  background-color: ${({ theme }) => theme.colors.lightMint};
   border-radius: 8px;
   max-width: 500px;
   padding: 20px 20px 40px 20px;
   box-shadow: 2px 2px rgb(161, 160, 160);
-  color: #080808;
+  color:  ${({ theme }) => theme.colors.navyBlue};
 `;
-
 
 function App() {
   const [amount, setAmount] = useState(0);

@@ -36,7 +36,7 @@ export const Label = styled.label`
 export const Paragraph = styled.p`
   padding: 5px;
   margin: 5px;
-  color: #113850;
+  color:  ${({ theme }) => theme.colors.navyBlue};
   font-weight: bold;
 `;
 
@@ -44,7 +44,7 @@ export const Button = styled.button`
   padding: 8px 5px 8px 5px;
   margin: 5px;
   border-radius: 4px;
-  background-color: #10382a;
+  background-color: ${({ theme }) => theme.colors.coldGreen};
   border: none;
   color: hsl(205, 28%, 80%);
 
