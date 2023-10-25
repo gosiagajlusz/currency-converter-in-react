@@ -65,3 +65,22 @@ export const Select = styled.select`
   padding: 5px;
   margin: 5px;
 `;
+
+export const ResultWrapper = styled.div`
+  padding: 20px;
+  min-height: 70px;
+`;
+
+export const ParagraphResult = styled.p`
+  text-align: center;
+  margin: 0px;
+`;
+
+
+
+export const Loading = styled.p `
+color:teal;
+`
+export const Failure = styled.p `
+color:red;
+`

@@ -1,4 +1,5 @@
 import { currencies } from "../currencies";
+import { useState } from "react";
 import {
   FormWrapper,
   Section,
@@ -7,23 +8,35 @@ import {
   Paragraph,
   Button,
   Input,
-  Select
+  Select,
+  ResultWrapper,
+  Loading,
+  Failure,
+  ParagraphResult,
 } from "./styled";
 
-const Form = ({
-  onFormSubmit,
-  amount,
-  setAmount,
-  currency,
-  setCurrency,
-  onSelectChange,
-  targetAmount,
-  result,
-  calculateResult,
-}) => {
+const Form = ({}) => {
+  const [amount, setAmount] = useState(0);
 
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    calculateResult(currency, amount);
+  };
 
-  
+  const [currency, setCurrency] = useState(currencies[0].name);
+  const onSelectChange = ({ target }) => setCurrency(target.value);
+
+  const [result, setResult] = useState(null);
+
+  const calculateResult = (currency, amount) => {
+    const rate = currencies.find(({ name }) => name === currency).rate;
+
+    setResult({
+      amount: +amount,
+      targetAmount: amount * rate,
+    });
+  };
+
   return (
     <FormWrapper onSubmit={onFormSubmit}>
       <Section>
@@ -45,10 +58,7 @@ const Form = ({
       <Section>
         <Label>
           <Paragraph>Wybierz walutę</Paragraph>
-          <Select
-            value={currency}
-            onChange={onSelectChange}
-          >
+          <Select value={currency} onChange={onSelectChange}>
             {currencies.map((currency) => (
               <option key={currency.name} value={currency.name}>
                 {currency.name}
@@ -62,6 +72,14 @@ const Form = ({
           <Button type="submit">Przelicz!</Button>
         </ButtonWrapper>
       </Section>
+      <ResultWrapper>
+        {result && (
+          <ParagraphResult>
+            Kwota w złotówkach:{" "}
+            <strong>{result.targetAmount.toFixed(2)} </strong>
+          </ParagraphResult>
+        )}
+      </ResultWrapper>
     </FormWrapper>
   );
 };
