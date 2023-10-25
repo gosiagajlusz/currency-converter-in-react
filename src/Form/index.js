@@ -21,6 +21,9 @@ const Form = ({
   result,
   calculateResult,
 }) => {
+
+
+  
   return (
     <FormWrapper onSubmit={onFormSubmit}>
       <Section>
