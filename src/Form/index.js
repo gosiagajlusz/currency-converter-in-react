@@ -12,13 +12,14 @@ import {
   Loading,
   Failure,
   ParagraphResult,
+  Date
 } from "./styled";
 import { useRatesData } from "./useRatesData";
 
 const Form = () => {
-  const [result, setResult] = useState(null);
   const ratesData = useRatesData();
   const [currency, setCurrency] = useState("USD");
+  const [result, setResult] = useState(null);
   const [amount, setAmount] = useState("");
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -47,6 +48,10 @@ const Form = () => {
           Coś nie działa. Sprawdź, czy masz połączenie z internetem.
         </Failure>
       ) : (
+        <Section>
+        {ratesData.state === "succes" && ratesData.date && (
+        <Date>Kurs walut pobierany z currencyapi.com Aktualne na dzien {ratesData.date.toLocaleDateString()}</Date>
+    )}
         <Fragment>
           <Section>
             <Label>
@@ -95,7 +100,8 @@ const Form = () => {
             </Label>
           </Section>
         </Fragment>
-      )}
+        </Section>
+)}
     </FormWrapper>
   );
 };

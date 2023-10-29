@@ -82,3 +82,8 @@ export const Loading = styled.p `
 export const Failure = styled.p `
   color: ${({ theme }) => theme.colors.cherry};
 `
+
+export const Date = styled.p `
+  color: ${({ theme }) => theme.colors.coldGreen};  
+
+`
