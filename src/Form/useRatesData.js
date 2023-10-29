@@ -5,7 +5,7 @@ const URL= "https://api.currencyapi.com/v3/latest?apikey=cur_live_NZ7GkaDNppJmHT
 export const useRatesData= ()=>{
 
 const [ratesData, setRatesData] = useState({
-  state: "loading",
+  state: "Loading",
 });
 
 useEffect(() => {
@@ -25,7 +25,7 @@ useEffect(() => {
       });
     } catch {
       setRatesData({
-        state: "error",
+        state: "Error",
       });
     }
   };
