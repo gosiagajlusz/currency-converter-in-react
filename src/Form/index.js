@@ -26,7 +26,7 @@ const Form = () => {
   };
 
   const calculateResult = (currency, amount) => {
-    const rate = ratesData.rates[currency];
+    const rate = ratesData.rates[currency].value;
     setResult({
       amount: +amount,
       targetAmount: amount * rate,
