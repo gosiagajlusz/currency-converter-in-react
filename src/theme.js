@@ -7,6 +7,7 @@ export const theme = {
     navyBlue:  "#113850",
     coldGreen: "#10382a",
     lightMint: "#c4d7c7",
+    cherry:"#990F02",
   },
 
   breakpoints: {
