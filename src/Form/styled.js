@@ -76,11 +76,9 @@ export const ParagraphResult = styled.p`
   margin: 0px;
 `;
 
-
-
 export const Loading = styled.p `
-color:teal;
+  color: ${({ theme }) => theme.colors.coldGreen};
 `
 export const Failure = styled.p `
-color:red;
+  color: ${({ theme }) => theme.colors.cherry};
 `
