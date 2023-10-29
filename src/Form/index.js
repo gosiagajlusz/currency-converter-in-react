@@ -1,4 +1,3 @@
-// import { currencies } from "../currencies";
 import { useState, useEffect, Fragment } from "react";
 import {
   FormWrapper,
@@ -66,8 +65,10 @@ const Form = () => {
           <Section>
             <Label>
               <Paragraph>Wybierz walutę</Paragraph>
-              <Select value={currency} 
-              onChange={({ target }) => setCurrency(target.value)}>
+              <Select
+                value={currency}
+                onChange={({ target }) => setCurrency(target.value)}
+              >
                 {Object.keys(ratesData.data).map((currency) => (
                   <option key={currency} value={currency}>
                     {currency}
