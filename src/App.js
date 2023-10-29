@@ -3,7 +3,6 @@ import Form from "./Form";
 import Clock from "./Clock";
 import Result from "./Form";
 import { useState } from "react";
-import { currencies } from "./currencies";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { GlobalStyle } from "./globalStyles";
