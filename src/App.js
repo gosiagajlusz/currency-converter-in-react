@@ -1,4 +1,4 @@
-import Header from "./Header";
+// import Header from "./Header";
 import Form from "./Form";
 import Clock from "./Clock";
 import Result from "./Form";
@@ -23,11 +23,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Container>
-        <Clock />
-        <Header />
-        <Form>
-          <Result></Result>
-        </Form>
+        <Clock />      
+        <Form/>
       </Container>
     </ThemeProvider>
   );
