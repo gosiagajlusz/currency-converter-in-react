@@ -3,6 +3,8 @@
 demo:
 https://gosiagajlusz.github.io/currency-converter-in-react/
 
+The currency converter allows to easily input a value in PLN and convert it to various currencies.
+The exchange rates for these currencies are retrieved dynamically through an API.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
