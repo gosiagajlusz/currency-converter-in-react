@@ -41,7 +41,7 @@ const Form = (props) => {
     
     useEffect(() => {
      setMyDate(
-       new Date(!!ratesData.data && ratesData.data.last_updated_at)
+       new Date(!!ratesData.meta && ratesData.meta.last_updated_at)
      )
     },[ratesData]);
 
@@ -85,7 +85,7 @@ const Form = (props) => {
                   Wybierz walutę:
                   <StyledSelect value={currency} onChange={(event) => setCurrency(event.target.value)}>
 
-                     {Object.keys(ratesData.data.data).map(((currency) => (
+                     {Object.keys(ratesData.data).map(((currency) => (
                         <option key={currency} value={currency}>
                            {currency}
                         </option>

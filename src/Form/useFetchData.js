@@ -18,11 +18,12 @@ export const useFetchData = () => {
           throw new Error(response.status.Text);
         }
 
-        const data = await response.json();
+        const {data, meta} = await response.json();
 
         setRatesData({
           status: "success",
           data,
+          meta,
         });
         //tutaj chyba podawanie, że ma dac currency, a nie ogolnikowo,ze data spowodowalo błąd
       } catch (error) {
