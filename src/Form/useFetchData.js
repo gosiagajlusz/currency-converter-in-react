@@ -18,7 +18,7 @@ export const useFetchData = () => {
           throw new Error(response.status.Text);
         }
 
-        const {data, meta} = await response.json();
+        const { data, meta } = await response.json();
 
         setRatesData({
           status: "success",
