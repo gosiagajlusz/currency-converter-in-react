@@ -8,6 +8,7 @@ export const theme = {
     coldGreen: "#10382a",
     lightMint: "#c4d7c7",
     cherry:"#990F02",
+    white: "#FFFFFF",
   },
 
   breakpoints: {
