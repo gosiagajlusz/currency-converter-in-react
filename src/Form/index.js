@@ -24,7 +24,7 @@ const Form = (props) => {
    const [amount, setAmount] = useState('');
 
    const calculatedResult = (amount, currency) => {
-      const rate = ratesData.data.data[currency].value;
+      const rate = ratesData.data[currency].value;
 
       setResult({
          sourceAmount: +amount,
