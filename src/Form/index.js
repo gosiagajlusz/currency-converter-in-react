@@ -66,7 +66,7 @@ const Form = (props) => {
             </StyledError>
          ) : (
             <StyledFieldset>
-               <StyledLegend>Sprawdź ile to złotówek</StyledLegend>
+               <StyledLegend>Sprawdź ile to pieniędzy</StyledLegend>
                {props.children}
                <StyledDiv>
                <StyledLabel>
