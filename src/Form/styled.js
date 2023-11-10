@@ -5,6 +5,7 @@ export const StyledForm = styled.form`
   margin: 0 auto;
   grid-gap: 10px;
   align-items: center;
+  min-height: 400px;
 `;
 
 export const StyledFieldset = styled.fieldset`
